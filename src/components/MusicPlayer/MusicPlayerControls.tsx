@@ -15,7 +15,6 @@ export function MusicPlayerControls() {
     const oneSecond = 1 % 60;
 
     const handleTimeChange = () => {
-
         setCurrentTime(prevTime => prevTime + oneSecond);
         if (currentTime == totalDuration) {
             setCurrentTime(totalDuration);
