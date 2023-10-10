@@ -5,10 +5,28 @@ import { AiOutlinePause } from 'react-icons/ai'
 import { ImPlay3 } from 'react-icons/im'
 import { TfiBackLeft } from 'react-icons/tfi'
 import styles from './MusicPlayer.module.scss'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export function MusicPlayerControls() {
     const [playing, setPlaying] = useState<boolean>(false);
+    const [currentTime, setCurrentTime] = useState(0);
+    const [totalDuration, setTotalDuration] = useState(300);
+
+    const oneSecond = 1 % 60;
+
+    const handleTimeChange = () => {
+
+        setCurrentTime(prevTime => prevTime + oneSecond);
+        if (currentTime == totalDuration) {
+            setCurrentTime(totalDuration);
+        }
+    };
+
+    const formatTime = (timeInSeconds: number) => {
+        const minutes = Math.floor(timeInSeconds / 60);
+        const seconds = timeInSeconds % 60;
+        return `${String(minutes).padStart(1, '0')}:${String(seconds).padStart(2, '0')}`;
+    };
 
     return (
         <div className={styles.MusicPlayerControls}>
@@ -37,9 +55,16 @@ export function MusicPlayerControls() {
 
             </div>
             <div className={styles.MusicPlayerProgress}>
-                <p>0:00</p>
-                <input type="range" />
-                <p>0:00</p>
+                <p>{formatTime(currentTime)}</p>
+                <input
+                    type="range"
+                    value={currentTime}
+                    onChange={handleTimeChange}
+                    min={0}
+                    max={totalDuration}
+                    step={1}
+                />
+                <p>{formatTime(totalDuration)}</p>
             </div>
         </div>
     )

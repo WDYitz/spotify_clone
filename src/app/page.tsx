@@ -1,5 +1,5 @@
 'use client'
-import styles from '@/app/home/home.module.scss'
+import styles from './home.module.scss'
 import { Library } from '@/components/Library'
 import { NavHome } from '@/components/navHome'
 import { NavWrapper } from '@/components/navWrapper'
