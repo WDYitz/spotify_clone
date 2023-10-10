@@ -1,0 +1,39 @@
+.navHome {
+  background-color: var(--main_backgroundColor);
+  height: 110px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0 10px 0 20px;
+
+  .homeLinkWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60%;
+    width: 100%;
+
+    a {
+      font-size: 1.1em;
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      &:first-child::after {
+        content: "Início";
+        margin-left: 15px;
+      }
+
+      &::after {
+        content: "Buscar";
+        margin-left: 15px;
+      }
+
+      &:hover {
+        color: #fff;
+        transition: 150ms;
+      }
+    }
+  }
+}

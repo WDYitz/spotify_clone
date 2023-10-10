@@ -1,0 +1,96 @@
+.MusicPlayerRoot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  padding: 5px 20px 15px 20px;
+
+  .musicPlayerTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+    img {
+      width: 100%;
+      max-width: 60px;
+      height: 60px;
+      border-radius: 6px;
+      background-color: rgba(255, 255, 255, 0.527);
+    }
+    .musicPlayerSongTitle {
+      h2 {
+        font-size: 1em;
+        width: 100%;
+        color: white;
+      }
+      p {
+        width: 100%;
+        font-size: 0.8em;
+        color: var(--default_textColor);
+      }
+    }
+
+    .heart {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+
+  .MusicPlayerControls {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .MusicPlayerMainControls {
+      display: flex;
+      justify-content: space-between;
+      width: 50%;
+      padding: 10px 0;
+
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .PlayButton {
+        background-color: white;
+        color: #282828;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .MusicPlayerProgress {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input[type="range"] {
+      width: 80%;
+      height: 6px;
+      border-radius: 10px;
+      
+      &:hover {
+        background-color: var(--selected_green);
+      }
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      border: none;
+      background-color: #ffffff;
+    }
+  }
+}

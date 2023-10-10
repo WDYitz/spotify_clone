@@ -1,4 +1,5 @@
-import './globals.css'
+import { Player } from '@/components/MusicPlayer'
+import './styles/_globals.scss'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
@@ -16,7 +17,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <Player.Root>
+          <Player.Title />
+          <Player.Controls />
+          <Player.SoundControl />
+        </Player.Root>
+      </body>
     </html>
   )
 }
