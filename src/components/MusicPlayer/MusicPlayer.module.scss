@@ -61,7 +61,7 @@
 
       .PlayButton {
         background-color: white;
-        color: #282828;
+        color: #000000;
         width: 30px;
         height: 30px;
         border-radius: 50%;
@@ -80,9 +80,8 @@
 
     input[type="range"] {
       width: 80%;
-      height: 6px;
+      height: 4px;
       border-radius: 10px;
-      
       &:hover {
         background-color: var(--selected_green);
       }
@@ -91,6 +90,37 @@
     input[type="range"]::-moz-range-thumb {
       border: none;
       background-color: #ffffff;
+    }
+  }
+
+  .MusicPlayerSoundControl,
+  .SoundControl,
+  .muteButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .SoundControl {
+      width: 190px;
+      justify-content: space-between;
+
+      .muteButton{
+        cursor: pointer;
+      }
+
+      input[type="range"] {
+        width: 80%;
+        height: 4px;
+        border-radius: 10px;
+
+        &:hover {
+          background-color: var(--selected_green);
+        }
+      }
+
+      input[type="range"]::-moz-range-thumb {
+        border: none;
+        background-color: #ffffff;
+      }
     }
   }
 }

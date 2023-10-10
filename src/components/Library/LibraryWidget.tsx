@@ -6,7 +6,11 @@ import { AiOutlineArrowRight as RightArrowIcon } from 'react-icons/ai'
 import { PiMusicNotesPlusDuotone } from 'react-icons/pi'
 import { useState } from 'react'
 
-export function LibraryWidget() {
+type WidgetProps = {
+    onClick: () => void;
+}
+
+export function LibraryWidget({ onClick }: WidgetProps) {
     const [newPlaylist, setNewPlaylist] = useState<boolean>(false);
 
     const handleNewPlaylist = () => {
@@ -21,14 +25,14 @@ export function LibraryWidget() {
             </div>
             {newPlaylist &&
                 <div className={styles.newModal}>
-                    <p><PiMusicNotesPlusDuotone size={23}/> Create new Playlist</p>
+                    <p><PiMusicNotesPlusDuotone size={23} /> Create new Playlist</p>
                 </div>
             }
             <div className={styles.libraryActionsBtn}>
                 <span className={styles.libraryBtn} onClick={handleNewPlaylist}>
                     <AddIcon size={30} class={styles.Icon} />
                 </span>
-                <span className={styles.libraryBtn}>
+                <span className={styles.libraryBtn} onClick={onClick}>
                     <RightArrowIcon size={30} class={styles.Icon} />
                 </span>
             </div>
