@@ -17,7 +17,7 @@ export default function Home() {
       <NavWrapper showMore={openPlaylist}>
         <NavHome />
         <Library.Root>
-          <Library.Widget onClick={() => setOpenPlaylist(prev => !prev)} />
+          <Library.Widget onClick={handleOpenPlaylist} />
           <Library.Filter />
           <Library.Search />
           <Library.Playlist />
