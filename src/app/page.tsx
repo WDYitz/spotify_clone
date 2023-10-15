@@ -1,23 +1,15 @@
-'use client'
 import styles from './home.module.scss'
 import { Library } from '@/components/Library'
 import { NavHome } from '@/components/navHome'
 import { NavWrapper } from '@/components/navWrapper'
-import { useState } from 'react';
 
 export default function Home() {
-  const [openPlaylist, setOpenPlaylist] = useState<boolean>(false);
-
-  const handleOpenPlaylist = () => {
-    setOpenPlaylist(prev => !prev)
-  }
-
   return (
     <main className={styles.Home}>
-      <NavWrapper showMore={openPlaylist}>
+      <NavWrapper>
         <NavHome />
         <Library.Root>
-          <Library.Widget onClick={handleOpenPlaylist} />
+          <Library.Widget />
           <Library.Filter />
           <Library.Search />
           <Library.Playlist />

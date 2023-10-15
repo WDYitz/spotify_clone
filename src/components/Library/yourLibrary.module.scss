@@ -18,6 +18,9 @@ $SB: space-between;
     display: $F;
     justify-content: $SB;
     align-items: $C;
+    position: relative;
+
+    
 
     .libraryHeaderText {
       display: $F;
@@ -35,11 +38,35 @@ $SB: space-between;
       align-items: $C;
       justify-content: $SB;
       width: 70px;
+      position: relative;
 
-      &:first-child {
-        position: relative;
+      .newModal {
+        position: absolute;
+        display: $F;
+        justify-content: $C;
+        align-items: $C;
+        width: 220px;
+        height: 40px;
+        background-color: #282828;
+        left: 0px;
+        top: 40px;
+        border-radius: 5px;
+        padding: 5px;
+    
+        p {
+          width: 100%;
+          cursor: pointer;
+          padding: 4px;
+          border-radius: 4px;
+          text-align: $C;
+          display: $F;
+          align-items: $C;
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.158);
+          }
+        }
       }
-
+ 
       .libraryBtn {
         border-radius: 50%;
         display: $F;
@@ -47,7 +74,7 @@ $SB: space-between;
         justify-content: $SB;
         transition: 100ms;
         cursor: pointer;
-
+      
         .Icon {
           color: var(--default_textColor);
           border-radius: 50%;
@@ -129,33 +156,6 @@ $SB: space-between;
         content: "";
         transform: scale(1.15);
         background-color: rgba(155, 155, 155, 0.322);
-      }
-    }
-  }
-
-  .newModal {
-    position: absolute;
-    display: $F;
-    justify-content: $C;
-    align-items: $C;
-    width: 220px;
-    height: 40px;
-    background-color: #282828;
-    left: 300px;
-    top: 180px;
-    border-radius: 5px;
-    padding: 5px;
-
-    p {
-      width: 100%;
-      cursor: pointer;
-      padding: 4px;
-      border-radius: 4px;
-      text-align: $C;
-      display: $F;
-      align-items: $C;
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.158);
       }
     }
   }

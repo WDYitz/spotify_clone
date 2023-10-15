@@ -2,6 +2,7 @@ import { Player } from '@/components/MusicPlayer'
 import './styles/_globals.scss'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { WidgetProvider } from '@/contexts/LibraryWidgetContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,12 +19,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
-        <Player.Root>
-          <Player.Title />
-          <Player.Controls />
-          <Player.SoundControl />
-        </Player.Root>
+        <WidgetProvider>
+          {children}
+          <Player.Root>
+            <Player.Title />
+            <Player.Controls />
+            <Player.SoundControl />
+          </Player.Root>
+        </WidgetProvider>
       </body>
     </html>
   )
