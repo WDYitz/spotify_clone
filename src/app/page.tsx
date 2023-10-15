@@ -15,6 +15,7 @@ export default function Home() {
           <Library.Playlist />
         </Library.Root>
       </NavWrapper>
+      
     </main>
   )
 }
