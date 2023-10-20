@@ -1,11 +1,8 @@
 import { ReactNode } from 'react'
 import styles from './yourLibrary.module.scss'
+import { ChildrenProp } from '@/types/Children'
 
-type LibraryRootProp = {
-    children: ReactNode
-}
-
-export function LibraryRoot({ children }: LibraryRootProp) {
+export function LibraryRoot({ children }: ChildrenProp) {
     return (
         <section className={styles.libraryRoot}>
             {children}

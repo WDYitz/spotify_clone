@@ -1,11 +1,8 @@
 import { ReactNode } from 'react'
 import styles from './MusicPlayer.module.scss'
+import { ChildrenProp } from '@/types/Children'
 
-type MusicPlayerRootProp = {
-    children: ReactNode
-}
-
-export function MusicPlayerRoot({ children }: MusicPlayerRootProp) {
+export function MusicPlayerRoot({ children }: ChildrenProp) {
     return (
         <div className={styles.MusicPlayerRoot}>
             {children}

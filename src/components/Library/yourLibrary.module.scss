@@ -11,7 +11,7 @@ $SB: space-between;
   align-items: $C;
   flex-direction: column;
   border-radius: 10px;
-  height: 750px;
+  min-height: 75%;
 
   .libraryWidget {
     width: 100%;
@@ -19,8 +19,6 @@ $SB: space-between;
     justify-content: $SB;
     align-items: $C;
     position: relative;
-
-    
 
     .libraryHeaderText {
       display: $F;
@@ -52,7 +50,7 @@ $SB: space-between;
         top: 40px;
         border-radius: 5px;
         padding: 5px;
-    
+
         p {
           width: 100%;
           cursor: pointer;
@@ -66,7 +64,7 @@ $SB: space-between;
           }
         }
       }
- 
+
       .libraryBtn {
         border-radius: 50%;
         display: $F;
@@ -74,11 +72,16 @@ $SB: space-between;
         justify-content: $SB;
         transition: 100ms;
         cursor: pointer;
-      
+
+        .arrowSide {
+          transform: rotate(-180deg);
+        }
+
         .Icon {
           color: var(--default_textColor);
           border-radius: 50%;
           padding: 5px;
+          transition: all 150ms;
 
           &:hover {
             background-color: rgba(87, 87, 87, 0.733);
@@ -118,9 +121,11 @@ $SB: space-between;
       display: $F;
       align-items: $C;
       padding: 10px;
+      width: inherit;
 
       input {
         height: 100%;
+        width: inherit;
         background-color: transparent;
         color: var(--default_textColor);
         margin-left: 10px;

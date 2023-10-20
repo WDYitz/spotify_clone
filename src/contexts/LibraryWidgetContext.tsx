@@ -1,5 +1,6 @@
 'use client'
-import { ReactNode, createContext, useState, useContext } from "react";
+import { ChildrenProp } from "@/types/Children";
+import { createContext, useState, useContext } from "react";
 
 type WidgetContext = {
     handleAddPlaylistModal: boolean;
@@ -8,13 +9,9 @@ type WidgetContext = {
     isOpenShowMore: () => void;
 }
 
-type WidgetProviderProp = {
-    children: ReactNode
-}
-
 const LibraryWidgetContext = createContext<WidgetContext | null>(null)
 
-export const WidgetProvider = ({ children }: WidgetProviderProp) => {
+export const WidgetProvider = ({ children }: ChildrenProp) => {
     const [handleAddPlaylistModal, setHandlePlaylistModal] = useState<boolean>(false);
     const [handleShowMoreBtn, setHandleShowMoreBtn] = useState<boolean>(false);
 

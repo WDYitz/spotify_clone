@@ -1,7 +1,8 @@
 import styles from './home.module.scss'
 import { Library } from '@/components/Library'
-import { NavHome } from '@/components/navHome'
-import { NavWrapper } from '@/components/navWrapper'
+import { NavHome } from '@/components/NavigationHome'
+import { NavWrapper } from '@/components/NavigationWrapper'
+import { PageContent } from '@/components/PageContent'
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
           <Library.Playlist />
         </Library.Root>
       </NavWrapper>
-      
+      <PageContent />
     </main>
   )
 }

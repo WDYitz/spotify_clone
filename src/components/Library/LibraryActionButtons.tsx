@@ -7,6 +7,7 @@ import { useWidget } from '@/contexts/LibraryWidgetContext';
 
 export function LibraryActionsButton() {
     const WidgetContext = useWidget();
+    const invertArrowIcon = WidgetContext?.handleShowMoreBtn ? styles.arrowSide: null;
 
     return (
         <div className={styles.libraryActionsBtn}>
@@ -14,7 +15,7 @@ export function LibraryActionsButton() {
                 <AddIcon size={30} class={styles.Icon} />
             </span>
             <span className={styles.libraryBtn} onClick={WidgetContext?.isOpenShowMore}>
-                <RightArrowIcon size={30} class={styles.Icon} />
+                <RightArrowIcon size={30} class={`${styles.Icon} ${invertArrowIcon}`} />
             </span>
             {WidgetContext?.handleAddPlaylistModal &&
                 <div className={styles.newModal}>
