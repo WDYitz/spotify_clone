@@ -1,8 +1,10 @@
 .navWrapper {
   width: 20%;
   display: flex;
+  height: 100%;
   flex-direction: column;
   transition: 200ms;
+  margin: 0 0 15px 0;
 }
 .open {
   width: 40%;
