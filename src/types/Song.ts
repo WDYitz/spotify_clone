@@ -1,8 +1,10 @@
+
 export type SongType = {
   song_title: string;
   artist_name: string;
   image: string;
   album: string;
-  song_time: Object;
+  duration: number;
   liked: boolean;
+  dateAdded: Date;
 };

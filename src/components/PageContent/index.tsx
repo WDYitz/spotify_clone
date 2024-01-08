@@ -2,7 +2,7 @@
 'use client'
 import { useNavigation } from '@/contexts/NavigationContext'
 import styles from './pageContent.module.scss'
-import { Main } from '@/app/main/index'
+import { Main } from '@/pages/main/index'
 
 export function PageContent() {
   const navigation = useNavigation();
